@@ -1,0 +1,119 @@
+.logout-button {
+    background-color: transparent; 
+    border: 1px solid #ddd; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+  }
+  
+  .logout-button:hover {
+    background-color: #F68657; 
+    color: white; 
+  }
+
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    height: 500px;
+  }
+
+  .show-password-button {
+    position: relative;
+    color: black;
+    background-color: inherit;
+    border: none;
+  }
+
+  .show-password-button-click {
+    width: 20px;
+    height: 20px;
+    top: 100px;
+    object-fit: contain;
+    position: absolute;
+    left: 200px;
+    top: -20px; 
+  }
+
+  .show-password-button-click-2 {
+    width: 20px;
+    height: 20px;
+    top: 100px;
+    object-fit: contain;
+    position: absolute;
+    left: 215px;
+    top: -20px;
+  }
+
+  input {
+    color: black;
+    border-radius: 5%;
+  }
+
+  .align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 25%;
+  }
+
+  .show-password {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .registration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
+    height: fit-content;
+  }
+
+  .input-group {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;    
+    border-radius: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    padding: 10px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: black;
+    height: 5px;
+  }
+  
+  .button {
+    padding: 10px 90px;
+    cursor: pointer;
+    background-color: #f68657;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  
+  .error {
+    color: red;
+  }
+
+  .pass-word-reset-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    height: 500px;
+  }
+
+  .confirm-password-form, .register-button  {
+    width: 250px; 
+  }
+  
+
+  
