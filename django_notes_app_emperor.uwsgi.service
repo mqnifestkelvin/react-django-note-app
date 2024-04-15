@@ -1,0 +1,9 @@
+[Unit]
+Description=uwsgi emperor for django note app
+After=network.target
+[Service]
+User=ubuntu
+Restart=always
+ExecStart=/home/ubuntu/react-django-note-app/venv/bin/uwsgi --emperor /home/ubuntu/react-django-note-app/vassals --uid www-data --gid www-data
+[Install]
+WantedBy=multi-user.target
