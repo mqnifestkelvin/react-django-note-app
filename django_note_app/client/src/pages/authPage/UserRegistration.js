@@ -73,7 +73,7 @@ class UserRegistration extends Component {
     return (
       <div className="registration-page">
         <PasswordResetErrors error={this.props.error} />
-        <form onSubmit={this.onSubmit} className="registration-form">
+        <form onSubmit={this.onSubmit}>
           <div className="input-group">
             <label htmlFor="first_name">First Name:</label>
             <input
