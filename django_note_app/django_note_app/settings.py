@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,13 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-au4dc)n26a1_g9qeo%1h^e#no6(8msxp47gp0^o@eb%5m3w5t$'
+SECRET_KEY = config('SECRET_KEY', default='default_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=lambda v: [s.strip() for s in v.split(',')] if v else [])
 
 # Application definition
 
@@ -91,7 +92,6 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:8000', "http://127.0.0.1:8000"]
 
 ROOT_URLCONF = 'django_note_app.urls'
 
@@ -190,13 +190,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # Email configuration settings:
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = 'True'
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_PORT = config('EMAIL_PORT', default='587', cast=int)
+EMAIL_USE_TLS = True  
 
 # Be sure to read the guide in the resources folder of this lecture (SETUP THE EMAIL BACKEND)
 
-EMAIL_HOST_USER = 'mqnifestkelvin' # - Enter your GMAIL address # The host email that sends password reset emails
-EMAIL_HOST_PASSWORD = 'tlbeyazgsjntebkp' # - Enter your app password 
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='') # - Enter your GMAIL address # The host email that sends password reset emails
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='') # - Enter your app password 
 # APPEND_SLASH=False
