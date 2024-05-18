@@ -38,8 +38,218 @@ If the user doen't have any use for the current note, They can remove the notes 
 When the user is done creating their notes, and is no longer using the app, they can then click on the logout button to deautheticate and leave their notes.
 
 ## API End Points
+### Authentication Endpoints
+#### Obtain Token
+URL: /auth/token
+Method: POST
 
+Description: Obtain a JWT token by providing valid user credentials.
 
+```
+Request Body:
+{
+    "username": "string",
+    "password": "string"
+}
+
+Response:
+{
+    "refresh": "string",
+    "access": "string"
+}
+```
+
+#### Refresh Token
+URL: /auth/token/refresh
+Method: POST
+
+Description: Refresh the JWT token.
+
+```
+Request Body:
+{
+    "refresh": "string"
+}
+
+Response:
+{
+    "access": "string"
+}
+```
+
+#### Register User
+URL: /auth/user/register
+Method: POST
+
+Description: Register a new user.
+
+```
+Request Body:
+{
+    "username": "string",
+    "email": "string",
+    "password": "string"
+}
+
+Response:
+{
+    "message": "User registered successfully!",
+    "data": {
+        "username": "string",
+        "email": "string"
+    },
+    "token": "string"
+}
+```
+
+#### Login User
+URL: /auth/user/login
+Method: POST
+
+Description: Login a user and obtain an authentication token.
+
+```
+Request Body:
+{
+    "email": "string",
+    "password": "string"
+}
+
+Response:
+{
+    "token": "string"
+}
+```
+
+#### Logout User
+URL: /auth/user/logout
+Method: GET
+
+Description: Logout the current authenticated user.
+
+```
+Response:
+{
+    "message": "Logout successful."
+}
+```
+
+#### Password Reset
+URL: /auth/user/password-reset
+Method: POST
+
+Description: Request a password reset email.
+
+```
+Request Body:
+{
+    "email": "string"
+}
+
+Response:
+{
+    "message": "We have sent you a link to reset your password."
+}
+```
+
+#### Password Reset Confirmation
+URL: /auth/user/password-reset-confirm/<uidb64>/<token>/
+Method: POST
+
+Description: Confirm the password reset with a new password.
+
+```
+Request Body:
+{
+    "password": "string"
+}
+
+Response:
+{
+    "message": "Password has been reset successfully."
+}
+```
+
+#### Get Current User
+URL: /auth/user/me
+Method: GET
+
+Description: Retrieve details of the currently authenticated user.
+
+```
+Response:
+{
+    "username": "string",
+    "email": "string"
+}
+
+Response:
+{
+    "username": "string",
+    "email": "string"
+}
+```
+
+### Notes Endpoints
+#### List/Create Notes
+URL: /note/notes/
+Method: GET / POST
+
+Description: List all notes for the authenticated user or create a new note.
+
+```
+Request Body (Create):
+{
+    "title": "string",
+    "content": "string"
+}
+
+Response (List):
+[
+    {
+        "id": 1,
+        "title": "string",
+        "content": "string",
+        "user": "string"
+    },
+    ...
+]
+
+Response (Create):
+{
+    "id": 1,
+    "title": "string",
+    "content": "string",
+    "user": "string"
+}
+```
+
+#### Retrieve/Update/Delete Note
+URL: /note/notes/<int:pk>/
+Method: GET / PUT / DELETE
+
+Description: Retrieve, update, or delete a specific note by ID.
+
+```
+Request Body (Update):
+{
+    "title": "string",
+    "content": "string"
+}
+
+Response (Retrieve/Update):
+{
+    "id": 1,
+    "title": "string",
+    "content": "string",
+    "user": "string"
+}
+
+Response (Delete):
+{
+    "message": "Note deleted successfully."
+}
+```
 ## Cloning Our Repository into Our Local Machine
 To get started with using and testing the project on our local machine, we have to clone the remote repository onto our local repostory, We can get this done by copy and pasting this code to our terminal:
 
