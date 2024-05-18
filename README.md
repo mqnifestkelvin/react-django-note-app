@@ -153,7 +153,7 @@ Response:
 ```
 
 #### Password Reset Confirmation
-URL: /auth/user/password-reset-confirm/<<uidb64>>/<<token>>/
+URL: /auth/user/password-reset-confirm/:uidb64/:token/
 Method: POST
 
 Description: Confirm the password reset with a new password.
