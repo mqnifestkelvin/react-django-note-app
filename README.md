@@ -23,7 +23,21 @@ This feature helps users retrieve their account incase they forgot their passwor
 **Note List Page**: 
 On successful login, this page loads all the users note via API call form the notes database. This also enables the user to get into their notes on click of individual notes to access them.
 
-**Create Note**:
+**Create Note**: This feature navigate the user into a new page, here the user can start writing their notes. When the user is satified with the notes they have created, they can proceed to save the note they have created.
+
+**Save Note**: 
+After creating a note they user can proceed to saving their notes by hitting the save button on the top right position of their screen.
+
+**Update Note**:
+In a case where by the user is not pleased with their current note, they user can edit already created notes by either adding new content or removing any data that already exist. After the notes has been existed, they can click on save to make the update.
+
+**Delete Notes**: 
+If the user doen't have any use for the current note, They can remove the notes from their notes using the delete button. By clicking, the notes are removed and the user will no longer see the notes.
+
+**Log out**: 
+When the user is done creating their notes, and is no longer using the app, they can then click on the logout button to deautheticate and leave their notes.
+
+## API End Points
 
 
 ## Cloning Our Repository into Our Local Machine
@@ -129,19 +143,11 @@ If everything has been properly setup this should spawn a web instance of the ce
 ```
 python manage.py runserver
 ```
-This will authomaticall create a server at 
+This will automaticall create a server at 
 
 ```
 http://127.0.0.1:8000/
 ```
 
 **Note**: If a brower instance is not automatically started, we can easily copy paste the IP address above to view the running instance.
-After we have successfully creaated the server, we can proceed to creating our certificate from the backend by pasting the address into our browser:
-
-```
-http://127.0.0.1:8000/admin
-```
-
-After this is done, navigate towards adding a new certificate and save. 
-**Note**: Do not fill in the last three three columns these fields auto generate with unique values which are used to autogen the user unique QR codes:
-`slug`, `Encrypted byte code` and `Encrypted byte code redirect link`.  
+After we have successfully creaated the server.
