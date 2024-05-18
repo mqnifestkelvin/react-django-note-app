@@ -1,5 +1,31 @@
 # Getting Started With the Note App App
 
+## Features and Interfaces
+**Login Page**: 
+This is the page the users see when they got to the domain name `notes.mannieonline.tech`. This presents the user with login form where the user can input their email and their passwords, concluding with a log in button.
+
+**Create an Account**:
+If the user doesn't have an account, with this feature, they can create a user account using credentials such as:
+{
+  First name
+  Last name
+  user name
+  email
+  password
+  comfirm password
+}
+
+When the user is sure of their inputed credentials, they can go ahead and create their account by clicking on register. The user can get to this feature by clickin on the link `Don't Have an Account?`.
+
+**Forgot Password**:
+This feature helps users retrieve their account incase they forgot their password. This link can be obtain from the login page where they can click on the link `Forgot Password?`. This feature presents a form where the user inputs their email address to which on click of a password reset link is sent to the users email. On click of the link in the email, the user is redirected to the password reset page where they input their new password and comfirm their password.
+
+**Note List Page**: 
+On successful login, this page loads all the users note via API call form the notes database. This also enables the user to get into their notes on click of individual notes to access them.
+
+**Create Note**:
+
+
 ## Cloning Our Repository into Our Local Machine
 To get started with using and testing the project on our local machine, we have to clone the remote repository onto our local repostory, We can get this done by copy and pasting this code to our terminal:
 
