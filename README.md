@@ -327,7 +327,7 @@ python manage.py migrate
 ## Creating .env File
 This file stands in as a link between important pass keys that are essential to the proper functioning of the program. For instance, the app has functionalities which enable sending of OTPs to user email address for authetication. As a result of these functionality, there is a need to conceal the user private information, This is where the `.env` file comes in.
 
-Before we create a `.env` file in the root of the project, we have to import this library into the settings.py file in the CertificateVerification directory. We import the library by pasting the code at the top of the settings.py file:
+Before we create a `.env` file in the root of the project, we have to import this library into the settings.py file in the directory. We import the library by pasting the code at the top of the settings.py file:
 
 ```
 from decouple import config
@@ -348,7 +348,7 @@ EMAIL_HOST_PASSWORD=your_smtp_password
 **Note**: It is important to setup our email address to get the application up and running like it ought to. To get our smtp password and **EMAIL_HOST_PASSWORD** get the mailing side of things all setup, we can follow the instructions in the [link](https://drive.google.com/file/d/1qpT1-ttUIz_MqCZnrb8opILXQw1-oXW_/view?usp=share_link).
 
 ## Running a Local Instance of the Application
-If everything has been properly setup this should spawn a web instance of the certificate verification web application. To get this up and running we need to run the command:
+If everything has been properly setup this should spawn a web instance of the Note web application. To get this up and running we need to run the command:
 
 ```
 python manage.py runserver
